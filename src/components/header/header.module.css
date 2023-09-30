@@ -21,13 +21,13 @@
 }
 
 .redCircle {
-	background-color: tomato;
+	background-color: var(--tomato);
 }
 
 .yellowCircle {
-	background-color: #f1c40f;
+	background-color: var(--yellow);
 }
 
 .greenCircle {
-	background-color: #2ecc71;
+	background-color: var(--green);
 }
