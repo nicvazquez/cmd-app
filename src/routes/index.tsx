@@ -6,8 +6,6 @@ export default component$(() => {
 	return (
 		<>
 			<Hero />
-			<div role="presentation" class="ellipsis"></div>
-			<div role="presentation" class="ellipsis ellipsis-purple"></div>
 		</>
 	);
 });
