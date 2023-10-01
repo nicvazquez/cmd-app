@@ -11,6 +11,8 @@ export default component$<Props>(({ userMessage, chatStore }) => {
 	const message = useSignal("");
 
 	const handleSubmit = $(() => {
+		if (message.value.length === 0) return;
+
 		const commandDescription: string =
 			cmdCommands[message.value as keyof CommandType];
 
@@ -18,7 +20,9 @@ export default component$<Props>(({ userMessage, chatStore }) => {
 
 		const command = {
 			command: message.value,
-			description: commandDescription,
+			description:
+				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+				commandDescription ?? `zsh: command not found: ${message.value}`,
 		};
 
 		chatStore.pushCommand(command);
