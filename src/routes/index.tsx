@@ -1,7 +1,7 @@
 import ArrowWave from "@/components/arrowWave/arrowWave";
 import Form from "@/components/form/form";
 import { dateTime } from "@/utils/";
-import { component$, useSignal, useStore, $ } from "@builder.io/qwik";
+import { component$, useStore, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 interface Command {
@@ -16,7 +16,6 @@ export default component$(() => {
 			this.commands.push(command);
 		}),
 	});
-	const userMessage = useSignal("");
 
 	return (
 		<>
@@ -31,7 +30,7 @@ export default component$(() => {
 				</div>
 			))}
 
-			<Form userMessage={userMessage} chatStore={chatStore} />
+			<Form chatStore={chatStore} />
 		</>
 	);
 });

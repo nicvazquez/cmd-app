@@ -1,13 +1,12 @@
-import { type Signal, component$, $, useSignal } from "@builder.io/qwik";
+import { component$, $, useSignal } from "@builder.io/qwik";
 import { cmdCommands } from "@/data";
 import { type CommandType } from "@/types";
 import ArrowWave from "../arrowWave/arrowWave";
 
 interface Props {
-	userMessage: Signal<string>;
 	chatStore: any;
 }
-export default component$<Props>(({ userMessage, chatStore }) => {
+export default component$<Props>(({ chatStore }) => {
 	const message = useSignal("");
 
 	const handleSubmit = $(() => {
@@ -15,8 +14,6 @@ export default component$<Props>(({ userMessage, chatStore }) => {
 
 		const commandDescription: string =
 			cmdCommands[message.value as keyof CommandType];
-
-		userMessage.value = message.value;
 
 		const command = {
 			command: message.value,
@@ -36,7 +33,7 @@ export default component$<Props>(({ userMessage, chatStore }) => {
 			onSubmit$={handleSubmit}
 			preventdefault:submit
 		>
-			<ArrowWave />{" "}
+			<ArrowWave />
 			<input
 				bind:value={message}
 				onChange$={(e) => (message.value = e.target.value)}
