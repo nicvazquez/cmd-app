@@ -4,10 +4,15 @@ import { dateTime } from "@/utils/";
 import { component$, useSignal, useStore, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
+interface Command {
+	command: string;
+	description: string;
+}
+
 export default component$(() => {
 	const chatStore = useStore({
-		commands: [],
-		pushCommand: $(function (this, command) {
+		commands: [] as Command[],
+		pushCommand: $(function (this: { commands: Command[] }, command: Command) {
 			this.commands.push(command);
 		}),
 	});
