@@ -22,6 +22,8 @@ export default component$<Props>(({ userMessage, chatStore }) => {
 		};
 
 		chatStore.pushCommand(command);
+
+		message.value = "";
 	});
 
 	return (
