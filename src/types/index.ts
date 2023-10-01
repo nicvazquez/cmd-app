@@ -1,1 +1,1 @@
-export * from "./commandsTypes";
+export * from "./commandType";

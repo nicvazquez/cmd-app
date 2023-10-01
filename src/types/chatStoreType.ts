@@ -1,5 +1,5 @@
 import { type QRL } from "@builder.io/qwik";
-import { type CommandType } from "./commandsTypes";
+import { type CommandType } from "./commandType";
 
 export type ChatStoreType = {
 	commands: CommandType[];
