@@ -1,17 +1,14 @@
 import ArrowWave from "@/components/arrowWave/arrowWave";
 import Form from "@/components/form/form";
-import { type CommandType } from "@/types";
+import { type ChatStoreType } from "@/types/chatStoreType";
 import { dateTime } from "@/utils/";
 import { component$, useStore, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
-	const chatStore = useStore({
-		commands: [] as CommandType[],
-		pushCommand: $(function (
-			this: { commands: CommandType[] },
-			command: CommandType
-		) {
+	const chatStore = useStore<ChatStoreType>({
+		commands: [],
+		pushCommand: $(function (this, command) {
 			this.commands.push(command);
 		}),
 	});

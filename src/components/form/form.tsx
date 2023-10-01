@@ -2,9 +2,10 @@ import { component$, $, useSignal } from "@builder.io/qwik";
 import { cmdCommands } from "@/data";
 import { type CommandType } from "@/types";
 import ArrowWave from "../arrowWave/arrowWave";
+import { type ChatStoreType } from "@/types/chatStoreType";
 
 interface Props {
-	chatStore: any;
+	chatStore: ChatStoreType;
 }
 export default component$<Props>(({ chatStore }) => {
 	const message = useSignal("");
