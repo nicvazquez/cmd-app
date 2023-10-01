@@ -15,7 +15,7 @@ export default component$<Props>(({ chatStore }) => {
 		const commandDescription: string =
 			cmdCommands[message.value as keyof CommandType];
 
-		const command = {
+		const command: CommandType = {
 			command: message.value,
 			description:
 				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
