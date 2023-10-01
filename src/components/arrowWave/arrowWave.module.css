@@ -1,9 +1,12 @@
+.arrow,
+.wave {
+	font-size: 15px;
+}
+
 .arrow {
 	color: var(--green);
-	font-size: 8px;
 }
 
 .wave {
 	color: rgb(65, 194, 237);
-	font-size: 15px;
 }

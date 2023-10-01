@@ -22,7 +22,7 @@ export default component$(() => {
 					<div class="d-flex align-center g-05">
 						<ArrowWave /> {command.command}
 					</div>
-					<p>{command.description}</p>
+					<p class="mt-5px">{command.description}</p>
 				</div>
 			))}
 
